@@ -1,0 +1,27 @@
+// Koneksi ke database MongoDB
+use DatabaseMSIB;
+
+// Membuat collection 'pesertamsib' dengan data
+db.pesertamsib.insertMany([
+    {
+        _id: ObjectId(),
+        customer_id: "C001",
+        name: "Alice",
+        age: 30,
+        occupation: "Engineer",
+        income: 1500000,
+        purchased_products: ["P001", "P002"]
+    },
+    {
+        _id: ObjectId(),
+        customer_id: "C002",
+        name: "Jono",
+        age: 35,
+        occupation: "Surveyor",
+        income: 12500000,
+        purchased_products: ["P003", "P004"]
+    }
+]);
+
+// Verifikasi data telah berhasil disimpan
+db.pesertamsib.find().pretty();
